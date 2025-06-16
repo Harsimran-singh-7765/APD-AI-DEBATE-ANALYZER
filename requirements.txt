@@ -1,5 +1,5 @@
 streamlit
-openai-whisper
+whisper
 crewai
 google-generativeai
 python-dotenv
