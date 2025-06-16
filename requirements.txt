@@ -103,6 +103,7 @@ overrides==7.7.0
 packaging==24.2
 pandas==2.3.0
 parso==0.8.4
+pysqlite3-binary==0.5.2.post2
 pdfminer.six==20250506
 pdfplumber==0.11.7
 pillow==11.2.1
