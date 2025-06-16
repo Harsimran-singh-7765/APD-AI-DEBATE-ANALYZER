@@ -5,6 +5,10 @@ import whisper
 from crewai import Agent, Task, Crew, LLM
 from google.generativeai import configure
 from dotenv import load_dotenv
+import sys
+import pysqlite3
+sys.modules["sqlite3"] = pysqlite3
+
 
 load_dotenv()
 
