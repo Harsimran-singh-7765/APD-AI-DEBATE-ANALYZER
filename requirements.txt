@@ -3,3 +3,4 @@ whisper
 crewai
 google-generativeai
 python-dotenv
+pysqlite3-binary
