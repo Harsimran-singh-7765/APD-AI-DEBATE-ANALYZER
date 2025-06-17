@@ -1,5 +1,4 @@
-import os
-os.environ["CHROMA_DB_IMPL"] = "duckdb"  # 🚨 Must be added before importing crewai
+import patch 
 
 import streamlit as st
 import tempfile
