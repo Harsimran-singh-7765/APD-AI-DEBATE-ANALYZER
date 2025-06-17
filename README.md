@@ -29,10 +29,10 @@ This tool helps analyze 6 speeches from an APD round and provides:
 
 ## 🗂 File Structure
 
-📁 APD-AI-DEBATE-ANALYZER/
-├── APD.py # Streamlit web app file
-├── requirements.txt # Python libraries required
-└── README.md # Project overview and setup instructions
+📁 APD-AI-DEBATE-ANALYZER/                         
+├── APD.py # Streamlit web app file                                   
+├── requirements.txt # Python libraries required                                           
+└── README.md # Project overview and setup instructions                                     
 
 
 
