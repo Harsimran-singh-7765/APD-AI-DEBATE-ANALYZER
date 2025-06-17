@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import tempfile
-import whisper
+# import whisper
 from crewai import Agent, Task, Crew, LLM
 from google.generativeai import configure
 from dotenv import load_dotenv
@@ -43,24 +43,24 @@ demo_transcripts = {
 
 transcript_dict = {}
 
-# -------- Transcription --------
-if use_demo:
-    st.success("✅ Using demo transcripts")
-    transcript_dict = demo_transcripts
+# # -------- Transcription --------
+# if use_demo:
+#     st.success("✅ Using demo transcripts")
+#     transcript_dict = demo_transcripts
 
-elif uploaded_files and len(uploaded_files) == 6:
-    st.success("✅ 6 files uploaded successfully!")
+# elif uploaded_files and len(uploaded_files) == 6:
+#     st.success("✅ 6 files uploaded successfully!")
 
-    st.markdown("### 🔄 Transcribing...")
-    model = whisper.load_model("base")
+#     st.markdown("### 🔄 Transcribing...")
+#     model = whisper.load_model("base")
 
-    for i, audio in enumerate(uploaded_files):
-        with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
-            tmp_file.write(audio.read())
-            tmp_path = tmp_file.name
-        result = model.transcribe(tmp_path)
-        transcript_dict[f"Speaker {i+1}"] = result["text"]
-        st.markdown(f"**Speaker {i+1}:** {result['text'][:100]}...")
+#     for i, audio in enumerate(uploaded_files):
+#         with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+#             tmp_file.write(audio.read())
+#             tmp_path = tmp_file.name
+#         result = model.transcribe(tmp_path)
+#         transcript_dict[f"Speaker {i+1}"] = result["text"]
+#         st.markdown(f"**Speaker {i+1}:** {result['text'][:100]}...")
 
 # -------- ANALYSIS --------
 if transcript_dict:
