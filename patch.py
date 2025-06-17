@@ -1,8 +1,10 @@
-# patch.py
+# crewai_patch.py
 import os
 os.environ["CREWAI_DISABLE_MEMORY"] = "1"
-os.environ["CHROMA_DB_IMPL"] = "duckdb"  # Force it off sqlite
+os.environ["CHROMA_DB_IMPL"] = "duckdb"
 
-# Optional safety (not strictly needed, but helps in some builds)
-import chromadb
-chromadb.config.Settings().is_persistent = False
+# Monkey patch Chroma import if still triggered
+import builtins
+builtins.__dict__["__import__"] = lambda name, *args, **kwargs: (
+    None if name.startswith("chromadb") else __import__(name, *args, **kwargs)
+)
