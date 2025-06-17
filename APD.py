@@ -1,20 +1,19 @@
-import streamlit as st
 import os
+os.environ["CHROMA_DB_IMPL"] = "duckdb"  # 🚨 Must be added before importing crewai
+
+import streamlit as st
 import tempfile
 # import whisper
 from crewai import Agent, Task, Crew, LLM
 from google.generativeai import configure
 from dotenv import load_dotenv
-import sys
-import pysqlite3
-sys.modules["sqlite3"] = pysqlite3
-
 
 load_dotenv()
 
 # Configure Gemini API
 configure(api_key=os.environ["GEMINI_API_KEY"])
 llm = LLM(model="gemini/gemini-1.5-flash")
+
 
 st.set_page_config(page_title="🧠 APD AI Debate Analyzer", layout="centered")
 st.title("🧠 Asian Parliamentary Debate Analyzer")
